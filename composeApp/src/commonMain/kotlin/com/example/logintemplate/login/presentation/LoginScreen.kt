@@ -19,6 +19,7 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
+import com.example.logintemplate.design_system.NoteMarkButton
 import com.example.logintemplate.ui.components.EmailInputFieldWithAnimation
 import com.example.logintemplate.ui.components.PasswordInputFieldWithAnimation
 import com.example.logintemplate.ui.components.isValidEmail
@@ -115,6 +116,21 @@ fun LoginScreen(
             )
         }
 
+        NoteMarkButton(
+            text = "Log In",
+            onClick = {
+                viewModel.onAction(
+                    LoginAction.OnLoginClick(
+                        userNameInput,
+                        passwordInput,
+                        isChecked
+                    )
+                )
+            },
+            enabled = isLoginEnabled,
+            modifier = Modifier.fillMaxWidth()
+        )
+        /*
         Button(
             onClick = {
                 viewModel.onAction(
@@ -130,6 +146,7 @@ fun LoginScreen(
         ) {
             Text("Login")
         }
+        */
     }
 
 }

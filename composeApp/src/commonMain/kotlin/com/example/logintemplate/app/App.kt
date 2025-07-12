@@ -9,6 +9,7 @@ import com.example.logintemplate.home.presentation.HomeScreenRoot
 import com.example.logintemplate.login.presentation.LoginScreenRoot
 import com.example.logintemplate.login.presentation.LoginViewModel
 import com.example.logintemplate.splash.presentation.SplashScreenRoot
+import com.example.logintemplate.ui.theme.NoteMarkTheme
 import org.jetbrains.compose.ui.tooling.preview.Preview
 import org.koin.compose.viewmodel.koinViewModel
 
@@ -20,7 +21,8 @@ fun App() {
     val startDestination = Route.Splash
     val viewModel = koinViewModel<LoginViewModel>()
 
-    MaterialTheme {
+    // MaterialTheme {
+    NoteMarkTheme {
         NavHost(
             navController = navController,
             startDestination = startDestination
